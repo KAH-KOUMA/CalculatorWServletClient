@@ -62,7 +62,7 @@ public class ServletClient extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+   
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -77,13 +77,6 @@ public class ServletClient extends HttpServlet {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -91,33 +84,25 @@ public class ServletClient extends HttpServlet {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
     private int addition(int e1, int e2) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
+       
         org.me.calculator.CalculatorWS port = service.getCalculatorWSPort();
         return port.addition(e1, e2);
     }
 
     private int soustration(int e1, int e2) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
+        
         org.me.calculator.CalculatorWS port = service.getCalculatorWSPort();
         return port.soustration(e1, e2);
     }
 
     private float moyenne(float e1, float e2, float e3) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
+       
         org.me.calculator.CalculatorWS port = service.getCalculatorWSPort();
         return port.moyenne(e1, e2, e3);
     }
